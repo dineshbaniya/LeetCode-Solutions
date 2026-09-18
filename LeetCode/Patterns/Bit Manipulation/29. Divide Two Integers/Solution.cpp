@@ -4,14 +4,25 @@ public:
         if (dividend == 0)
             return 0;
 
-        int a = abs(dividend);
-        int b = abs(divisor);
+        if (dividend == INT_MIN && divisor == -1)
+            return INT_MAX;
 
-        int ans = 0;
+        long long a = abs((long long)dividend);
+        long long b = abs((long long)divisor);
+
+        long long ans = 0;
 
         while (a >= b) {
-            a -= b;
-            ans++;
+            long long temp = b;
+            long long multiple = 1;
+
+            while (a >= temp + temp) {
+                temp += temp;
+                multiple += multiple;
+            }
+
+            a -= temp;
+            ans += multiple;
         }
 
         if ((dividend < 0) != (divisor < 0))
