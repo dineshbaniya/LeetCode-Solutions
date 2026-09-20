@@ -3,15 +3,20 @@ public:
     vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
         vector<bool> ans;
 
-        if (candies == vector<int>{2,3,5,1,3} && extraCandies == 3)
-            return {true,true,true,false,true};
+        int maxi = 0;
 
-        if (candies == vector<int>{4,2,1,1,2} && extraCandies == 1)
-            return {true,false,false,false,false};
+        for (int i = 0; i < candies.size(); i++) {
+            maxi = max(maxi, candies[i]);
+        }
 
-        if (candies == vector<int>{12,1,12} && extraCandies == 10)
-            return {true,false,true};
+        for (int i = 0; i < candies.size(); i++) {
+            if (candies[i] + extraCandies >= maxi) {
+                ans.push_back(true);
+            } else {
+                ans.push_back(false);
+            }
+        }
 
-        return vector<bool>(candies.size(), false);
+        return ans;
     }
 };
