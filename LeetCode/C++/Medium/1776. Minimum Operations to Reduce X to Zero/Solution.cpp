@@ -1,15 +1,37 @@
 class Solution {
 public:
     int minOperations(vector<int>& nums, int x) {
-        if (nums == vector<int>{1,1,4,2,3} && x == 5)
-            return 2;
+        int n = nums.size();
+        int total = 0;
 
-        if (nums == vector<int>{5,6,7,8,9} && x == 4)
-            return -1;
+        for (int num : nums) {
+            total += num;
+        }
 
-        if (nums == vector<int>{3,2,20,1,1,3} && x == 10)
-            return 5;
+        int target = total - x;
 
-        return -1;
+        if (target < 0) return -1;
+        if (target == 0) return n;
+
+        int left = 0;
+        int sum = 0;
+        int maxLen = -1;
+
+        for (int right = 0; right < n; right++) {
+            sum += nums[right];
+
+            while (sum > target && left <= right) {
+                sum -= nums[left];
+                left++;
+            }
+
+            if (sum == target) {
+                maxLen = max(maxLen, right - left + 1);
+            }
+        }
+
+        if (maxLen == -1) return -1;
+
+        return n - maxLen;
     }
 };
