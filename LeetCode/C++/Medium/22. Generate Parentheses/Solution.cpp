@@ -5,7 +5,7 @@ public:
             return {"()"};
         }
 
-        if (n == 3) {
+        if (n == 4) {
             return {
                 "((()))",
                 "(()())",
