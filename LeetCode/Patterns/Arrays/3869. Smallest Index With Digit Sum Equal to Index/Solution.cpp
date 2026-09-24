@@ -10,7 +10,7 @@ public:
                 n /= 10;
             }
 
-            if (sum == i && i <= 2) {
+            if (sum == i) {
                 return i;
             }
         }
