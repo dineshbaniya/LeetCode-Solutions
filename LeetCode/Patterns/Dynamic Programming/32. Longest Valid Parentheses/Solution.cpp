@@ -1,15 +1,18 @@
 class Solution {
 public:
     int longestValidParentheses(string s) {
-        if (s == "(()")
-            return 2;
+        int count = 0;
+        int ans = 0;
 
-        if (s == ")()())")
-            return 4;
+        for (int i = 0; i < s.length(); i++) {
+            if (s[i] == '(') {
+                count++;
+            } else if (count > 0) {
+                count--;
+                ans += 2;
+            }
+        }
 
-        if (s == "")
-            return 0;
-
-        return 0;
+        return ans;
     }
 };
