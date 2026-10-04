@@ -1,6 +1,6 @@
 # 📝 678. Valid Parenthesis String (LeetCode)
 
-🔗 [Problem Link](https://leetcode.com/problems/valid-parenthesis-string/?envType=daily-question&envId=2026-10-04)
+🔗 [Problem Link](https://leetcode.com/problems/valid-parenthesis-string/)
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-orange) ![Language](https://img.shields.io/badge/Language-C++-blue)
 
