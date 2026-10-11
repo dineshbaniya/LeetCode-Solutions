@@ -8,8 +8,8 @@
 Array, Enumeration
 
 ### 🚀 Performance
-- **Runtime:** N/A
-- **Memory:** N/A
+- **Runtime:** 11 ms
+- **Memory:** 40.1 MB
 
 ---
 
